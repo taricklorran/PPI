@@ -1,0 +1,40 @@
+body {
+    background-color: white;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    width: 60%;
+    margin: 0 auto;
+}
+
+input {
+    margin: 10px;
+}
+
+input::placeholder {
+    color: red;
+    font-size: 12px;
+}
+
+input:invalid + span::after {
+    content: 'X';
+    color: red;
+}
+
+input:valid + span::after {
+    content: '✓';
+    color: limegreen;
+}
+fieldset {
+    margin-top: 10px;
+    border-radius: 10px;
+}
+button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid gray;
+}
+
+button:hover {
+    color: gray;
+}

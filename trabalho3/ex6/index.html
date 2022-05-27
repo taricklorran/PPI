@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro de Cliente</title>
+</head>
+
+<body>
+
+    <form action="cadastraCliente.php" method="post">
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" name="dadospessoais" id="nome" required autofocus minlength="2" maxlength="50">
+                <span></span>
+            </div>
+            <div>
+                <label for="email">E-mail</label>
+                <input type="email" name="dadospessoais" id="email" autocomplete="off" required>
+                <span></span> <!--Para inserir X ou ✓-->
+            </div>
+            <div>
+                <label for="cpf">CPF:</label>
+                <input type="text" name="dadospessoais" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
+                <span></span>
+                <input type="hidden" name="dadospessoais" value="cpf preenchido">
+            </div>
+            <div>
+                <label for="exemplocpf">Exemplo CPF:</label>
+                <input type="text" name="dadospessoais" id="exemplocpf" value="111.222.333-44" readonly>
+            </div>
+            <div>
+                <label for="idade">Idade:</label>
+                <input type="number" name="dadospessoais" id="idade" required>
+                <span></span>
+            </div>
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" name="dadospessoais" id="telefone" required>
+            </div>
+            <div>
+                <label for="datanasc">Data de Nascimento:</label>
+                <input type="date" name="dadospessoais" id="datanasc">
+            </div>
+            <div>
+                <label>Sexo</label>
+                <div>
+                    <input type="radio" name="dadospessoais" id="masculino" value="Masculino">
+                    <label for="masculino">Masculino</label>
+                </div>
+                <div>
+                    <input type="radio" name="dadospessoais" id="feminino" value="Feminino">
+                    <label for="feminino">Feminino</label>
+                </div>
+            </div>
+            <div>
+                <label>Estado Civíl</label>
+                <div>
+                    <input type="radio" name="dadospessoais" id="solteiro" value="solteiro">
+                    <label for="solteiro">Solteiro</label>
+                </div>
+                <div>
+                    <input type="radio" name="dadospessoais" id="casado" value="casado">
+                    <label for="casado">Casado</label>
+                </div>
+                <div>
+                    <input type="radio" name="dadospessoais" id="divorciado" value="divorciado">
+                    <label for="divorciado">Divorciado</label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Endereço de Entrega</legend>
+            <div>
+                <label for="cep">CEP:</label>
+                <input type="text" name="enderecoentrega" id="cep" required>
+            </div>
+            <div>
+                <label for="tipologradouro">Tipo de Logradouro:</label>
+                <select name="tipologradouro" id="tipologradouro" required>
+                    <option value="">-</option>
+                    <option value="avenida">Avenida</option>
+                    <option value="rua">Rua</option>
+                    <option value="travessa">Travessa</option>
+                    <option value="quadra">Quadra</option>
+                </select>
+            </div>
+            <div>
+                <label for="logradouro">Logradouro:</label>
+                <input type="text" name="enderecoentrega" id="logradouro" required>
+            </div>
+            <div>
+                <label for="bairro">Bairro:</label>
+                <input type="text" name="enderecoentrega" id="bairro" required>
+            </div>
+            <div>
+                <label for="cidade">Cidade</label>
+                <input type="text" name="enderecoentrega" id="cidade" required>
+            </div>
+            <div>
+                <label for="estado">Estado</label>
+                <input type="text" name="enderecoentrega" id="estado" required>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Informações Adicionais</legend>
+            <div>
+                <label>Opção de Interesse</label>
+                <div>
+                    <input type="checkbox" name="informacoesadicionais[]" id="filmes">
+                    <label for="filmes">Filmes</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="informacoesadicionais[]" id="informatica">
+                    <label for="informatica">Informática</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="informacoesadicionais" id="games">
+                    <label for="games">Games</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="informacoesadicionais" id="livros">
+                    <label for="livros">Livros</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="informacoesadicionais" id="roupas">
+                    <label for="roupas">Roupas</label>
+                </div>
+            </div>
+            <div>
+                <label for="informacoescomplementares">Informações Complementares</label>
+                <br>
+                <textarea name="informacoesadicionais" id="informacoescomplementares" cols="50" rows="10"></textarea>
+            </div>
+            <div>
+                <input type="file" name="informacoesadicionais" id="anexararquivo">
+            </div>
+        </fieldset>
+        <br>
+        <button>Enviar</button>
+    </form>
+
+</body>
+
+</html>
