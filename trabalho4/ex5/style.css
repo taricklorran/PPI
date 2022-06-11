@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    background-size: 100%;
+    background-position: top;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+header h1 {
+    background-color: #646262;
+    color: #f0eeee;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+nav ul {
+    margin: 0;
+    padding: 5px 0;
+    width: 100%;
+    background-color: #cfcccc;
+    display: block;
+    text-align: center;
+}
+nav li {
+    display: inline;
+}
+
+main {
+    background-color: white;
+    width: 60%;
+    margin: 10px auto;
+    padding: 15px 50px 30px;
+    border: 1px solid #bbb7b7;
+}
+nav button {
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    background-color: inherit;
+    height: 30px;
+    margin: 0;
+}
+nav button:hover {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+button.buttonActive {
+    font-weight: bold;
+    color: blue;
+}
+
+.tabs section {
+    display: none;
+}
+section.tabActive {
+    display: block;
+}

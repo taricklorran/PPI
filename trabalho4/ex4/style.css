@@ -1,0 +1,44 @@
+body {
+    width: 60%;
+    margin: 0 auto;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+main {
+    width: 23%;
+    background-color: #eee;
+    border: 0.5px solid gray;
+    margin: 0;
+    padding: 2% 4%;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input {
+    width: 220px;
+    padding: 3px 2px;
+
+}
+
+li {
+    width: 200px;
+    margin-left: 10%;
+    margin-top: 3px;
+    padding: 5px 10px 5px 20px;
+    background-color: rgb(189, 217, 240);
+    border: 0.5px solid rgb(70, 67, 212);
+    border-radius: 3px;
+}
+
+li > button {
+    font-size: smaller;
+    float: right;
+    color: red;
+    border: none;
+    background-color: rgb(189, 217, 240);
+    cursor: pointer;
+}
