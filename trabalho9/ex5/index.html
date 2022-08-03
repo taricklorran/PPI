@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="fetchApi.js"></script>
+    <title>Consumindo API externo - PokéAPI</title>
+</head>
+<body>
+    <form action="search" name="searchPokemon">
+        <input type="text" name="search" id="search" placeholder="Digiteo Id ou o Pokémon">
+        <button type="button" id="btn">Carregar</button>
+    </form>
+    <div id="container">
+        <main>
+            <h2 id="nome">Pokémon</h2>
+            <img id="pic">
+            <h3 id="numero">id</h3>
+        </main>
+    </div>
+    
+</body>
+</html>

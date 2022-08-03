@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rolagem Infinita</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #dedede;
+      font-family: Helvetica;
+      width: 60%;
+      margin: 0 auto;
+      margin-top: 3rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #888;
+    }
+
+    .item {
+      background-color: white;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .item-image {
+      width: 150px;
+      height: 150px;
+      margin: 0 2rem;
+    }
+
+    .item-name {
+      font: 2em Verdana;
+      color: #888;
+    }
+
+    .item-price {
+      font: 2em Verdana;
+      color: darkgreen;
+      margin-left: 2rem;
+    }
+
+    .item-price::before {
+      content: 'R$ ';
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--Seção de produtos-->
+  <section id="products">
+    <h2>Nossos produtos</h2>
+
+    <!--Use template para ser renderizado pelo script no lado do cliente-->
+    <template id="template">
+      <div class="item">
+        <img class="item-image" src="images/{{prod-image}}"></img>
+        <span class="item-name">{{prod-name}}</span> <!--substituição dos valores-->
+        <span class="item-price">{{prod-price}}</span>
+      </div>
+    </template>
+
+  </section>
+
+  <script>
+
+    function renderProducts(newProducts) {
+
+      const prodsSection = document.getElementById("products"); //captura o id do elemento que no caso é "products"
+      const template = document.getElementById("template"); //captura o id do elemento que no caso é "template"
+
+      for (let product of newProducts) { //for para percorrer cada valor do json
+        let html = template.innerHTML
+          .replace("{{prod-image}}", product.imagePath) //altera os dados do elemento template
+          .replace("{{prod-name}}", product.name)
+          .replace("{{prod-price}}", product.price);
+
+        prodsSection.insertAdjacentHTML("beforeend", html); //insere o nó que resulta na árvore DOM
+      };
+    }
+
+    //executa a função assincrono "async" e dessa forma podemos definir await dentro da função
+    async function loadProducts() {
+
+      try {
+        //await usado na chamada da função que retornará uma promises
+        let response = await fetch("more-products.php");
+        //valida o resultado do retorno
+        if (!response.ok) throw new Error(response.statusText);
+        var products = await response.json();
+      }
+      //tratamento de erro
+      catch (e) {
+        console.error(e);
+        return;
+      }
+      //chama a função renderProducts passando a 2ª promises
+      renderProducts(products);
+    }
+
+    //carrega a página
+    window.onload = function () {
+      //carrega os produtos
+      loadProducts();
+    }
+
+    window.onscroll = function () {
+      //condição para scroll infinito verificando se está na parte inferior da página
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        //carrega produtos
+        loadProducts();
+      }
+    };
+
+  </script>
+
+</body>
+
+</html>

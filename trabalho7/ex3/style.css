@@ -1,0 +1,48 @@
+body {
+    background-color: #ddd;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    width: 60%;
+    margin: 0 auto;
+}
+
+main {
+    width: 50%;
+    background-color: white;
+    border: 1px solid gray;
+    padding: 2% 4%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    max-width: 300px;
+    box-shadow: 0 0 10px gray;
+}
+
+label {
+    color: #555;
+    margin: 10px;
+}
+
+.cadastro {
+    border: 1px solid gray;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    outline: 0;
+    
+}
+
+input:focus {
+    box-shadow: 0 0 10px gray;
+}
+
+button {
+    background-color: #66ccff;
+    color: white;
+}
+
+button:hover {
+    background-color: #00aaff;
+}

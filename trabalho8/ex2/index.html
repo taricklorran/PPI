@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1>Exemplo 1</h1>
+            <section>
+                <p>No exemplo 1, temos uma página web que recebe um cep e após a requisição, irá preencher com o
+                    resposta da requisição os campos de rua, bairro, cidade. Para que isso ocorra, quando o usuário
+                    estiver preenchendo o cep, o JavaScript já é executado realizando a validação do tamanho o cep,
+                    caso o cep tenha o tamanho 9 será chamado a função XMLHttpRequest.
+                </p>
+                <p>
+                    Quando ocorrer a chamada da requisição, será passado o parâmetro busca-endereco.php com o método
+                    get passando o cep na url que será executado assincrôno.
+                </p>
+                <p>
+                    No script php, será realizado a validação do cep de acordo com os endereços pré-cadastrados e caso
+                    o cep bater com que tem será retornado o endereço no formato JSON.
+                </p>
+                <p>
+                    Quando o retorno do script php ocorrer, vamos verificar se o retorno foi sucesso e acessar o JSON
+                    convertendo o JSON para um objeto JavaScript e depois manipular a árvore DOM via javaScript e 
+                    inserir as informações contidas no JSON nos inputs.
+                </p>
+            </section>
+            <h1>Exemplo 2</h1>
+            <section>
+                <p>
+                    O processo será parecido com a do exemplo 1, a diferença é que estamos definindo a propriedade responseType 
+                    e dessa forma não será necessário converter o retorno para um objeto JavaScript porque já
+                    estamos resgatando a resposta em um formato específico.
+                </p>
+            </section>
+            <h1>Exemplo 3</h1>
+            <section>
+                <p>
+                    Realiza o mesmo processos dos exemplos anteriores, a diferença está na parte que definimos o cabeçalho HTTP
+                    'Content-Type' para envio do JSON e envia a requisção convertida do objeto JS para JSON usando JSON.stringfy.
+                </p>
+            </section>
+        </div>
+    </main>
+    
+</body>
+</html>
